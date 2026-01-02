@@ -1,0 +1,19 @@
+strict digraph {
+rankdir=LR;
+u [type=input, label=u, shape=circle, style=filled, fillcolor="#dbeafe"];
+y [type=output, label=y, shape=doublecircle, style=filled, fillcolor="#dcfce7"];
+x1 [type=state, label=x1, shape=circle];
+xdot1 [type=xdot, label="x_dot1", shape=circle, style=dashed];
+x2 [type=state, label=x2, shape=circle];
+xdot2 [type=xdot, label="x_dot2", shape=circle, style=dashed];
+u -> xdot1 [gain=0, label=0];
+u -> xdot2 [gain=1, label=1];
+x1 -> xdot1 [gain=0, label=0];
+x1 -> xdot2 [gain="-a0", label="-a0"];
+x1 -> y [gain=b0, label=b0];
+xdot1 -> x1 [gain="1/s", label="1/s"];
+x2 -> xdot1 [gain=1, label=1];
+x2 -> xdot2 [gain="-a1", label="-a1"];
+x2 -> y [gain=b1, label=b1];
+xdot2 -> x2 [gain="1/s", label="1/s"];
+}

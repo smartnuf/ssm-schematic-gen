@@ -1,0 +1,11 @@
+name: "biquad_symbolic"
+A:
+  - [0, 1]
+  - [-a0, -a1]
+b: [0, 1]
+c: [b0, b1]
+variables:
+  - a0
+  - a1
+  - b0
+  - b1
